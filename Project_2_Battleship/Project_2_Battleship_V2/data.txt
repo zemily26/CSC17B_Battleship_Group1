@@ -1,0 +1,26 @@
+
+Player Display:
+     X   1   2   3   4   5
+   Y +-----------------------+
+   1 |   -   -   -   -   -   |
+   2 |   -   X   -   -   -   |
+   3 |   -   -   -   -   -   |
+   4 |   -   -   -   -   -   |
+   5 |   -   -   -   -   -   |
+     +-----------------------+
+
+Player Pattern:
+     X   1   2   3   4   5
+   Y +-----------------------+
+   1 |   X   O   -   O   X   |
+   2 |   O   X   X   X   O   |
+   3 |   X   X   O   O   -   |
+   4 |   X   X   O   X   O   |
+   5 |   X   X   X   X   O   |
+     +-----------------------+
+Player missed     = 1
+Player hit        = 0
+Computer missed   = 14
+Computer hit      = 9
+
+ 9
