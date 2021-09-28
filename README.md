@@ -5,3 +5,5 @@ Team Signatures:
 Andrew Robledo
 
 Joash Gem Marcos
+
+Lindsay Kislingbury
