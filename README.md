@@ -10,5 +10,3 @@ Joash Gem Marcos
 Lindsay Kislingbury
 
 Eaby Hernandez
-
-Your Name.
