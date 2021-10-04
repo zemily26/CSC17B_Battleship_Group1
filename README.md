@@ -14,3 +14,5 @@ Eaby Hernandez
 Emily Zhong
 
 Annabelle Tamano
+
+Amanda Sarenana
