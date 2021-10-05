@@ -16,3 +16,5 @@ Emily Zhong
 Annabelle Tamano
 
 Amanda Sarenana
+
+Jyro Jimenez
