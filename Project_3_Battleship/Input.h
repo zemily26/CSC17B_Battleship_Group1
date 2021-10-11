@@ -1,4 +1,11 @@
 //User Input VERSION 2 ANDREW ROBLEDO OCT 10 2021
+//Edited By :
+//
+
+//  Input input;
+//  input.Destroy();
+
+//Make sure to used Destroy on this class.
 
 #ifndef INPUT_H
 #define INPUT_H
