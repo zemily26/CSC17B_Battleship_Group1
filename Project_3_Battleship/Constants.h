@@ -8,6 +8,12 @@
 const int BOARD_WIDTH = 8;
 const int BOARD_HEIGHT = 8;
 
+//>> Model/Ship.h
+const int FLEET_SIZE = 5;
+enum ShipType {Carrier,Battleship,Cruiser,Submarine,Destroyer};
+const std::string SHIP_NAMES[] = {"Carrier","Battleship","Cruiser","Submarine","Destroyer"};
+const int SHIP_SIZE[] = {5,4,3,3,2};
+
 //>>Input.h View.h
 
 const std::string invalidWarning_Waiting = "Currently Not Accepting Inputs.";

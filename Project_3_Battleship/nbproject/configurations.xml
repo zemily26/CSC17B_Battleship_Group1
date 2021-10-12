@@ -8,6 +8,7 @@
         <itemPath>Cell.h</itemPath>
         <itemPath>Grid.h</itemPath>
         <itemPath>PlayerData.h</itemPath>
+        <itemPath>Ship.h</itemPath>
       </logicalFolder>
       <itemPath>Constants.h</itemPath>
       <itemPath>Controller.h</itemPath>
@@ -27,6 +28,7 @@
         <itemPath>Cell.cpp</itemPath>
         <itemPath>Grid.cpp</itemPath>
         <itemPath>PlayerData.cpp</itemPath>
+        <itemPath>Ship.cpp</itemPath>
       </logicalFolder>
       <itemPath>Controller.cpp</itemPath>
       <itemPath>File.cpp</itemPath>
@@ -87,6 +89,10 @@
       </item>
       <item path="PlayerData.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Ship.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Ship.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="View.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="View.h" ex="false" tool="3" flavor2="0">
@@ -143,6 +149,10 @@
       <item path="PlayerData.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="PlayerData.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Ship.cpp" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Ship.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="View.cpp" ex="false" tool="1" flavor2="0">
       </item>
