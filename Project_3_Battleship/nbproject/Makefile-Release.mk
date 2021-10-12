@@ -42,6 +42,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Input.o \
 	${OBJECTDIR}/Model.o \
 	${OBJECTDIR}/PlayerData.o \
+	${OBJECTDIR}/Ship.o \
 	${OBJECTDIR}/View.o \
 	${OBJECTDIR}/main.o
 
@@ -104,6 +105,11 @@ ${OBJECTDIR}/PlayerData.o: PlayerData.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PlayerData.o PlayerData.cpp
+
+${OBJECTDIR}/Ship.o: Ship.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Ship.o Ship.cpp
 
 ${OBJECTDIR}/View.o: View.cpp
 	${MKDIR} -p ${OBJECTDIR}

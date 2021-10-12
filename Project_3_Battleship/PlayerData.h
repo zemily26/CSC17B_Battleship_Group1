@@ -15,6 +15,7 @@ public:
 private:
     Grid targetBoard;
     Grid playerBoard;
+    //Ship* ships To-Do, Add Dynamic Array of Ships
     std::string playerName;
 };
 
