@@ -9,7 +9,7 @@ public:
     Grid();
     Grid(const Grid& orig);
     virtual ~Grid();
-    //Cell getCell(int row,int col);
+    Cell& getCell(int row,int col);
     void Destroy();
 private:
     Cell** board;
