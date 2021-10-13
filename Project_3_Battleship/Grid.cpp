@@ -1,6 +1,7 @@
 
 #include "Grid.h"
 #include "Cell.h"
+
 #include "Constants.h"
 
 //Public::
@@ -13,6 +14,11 @@ Grid::Grid(const Grid& orig) {
 }
 
 Grid::~Grid() {
+}
+
+// X Y FORMAT 
+Cell& Grid::GetCell(int col,int row){
+    return board[col][row];
 }
 
 void Grid::Destroy() {
