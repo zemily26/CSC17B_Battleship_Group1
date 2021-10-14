@@ -15,10 +15,11 @@ public:
     Ship(const Ship& orig);
     virtual ~Ship();
 
-    void SetUp(int newx, int newy, ShipType type, bool isSideways);
+    void SetUp(int newx, int newy, int type, bool isSideways);
     bool CheckShot(int shotX, int shotY);
     bool IsDestoyed();
-
+    
+    bool IsShipOverlap(Ship b);
 private:
     int hitpoints;
     //bool* hull; use dynamic array to have ship keep track of its own tiles???
