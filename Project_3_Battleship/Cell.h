@@ -3,24 +3,18 @@
 #define CELL_H
 
 class Cell {
+private:
+    bool ship;  //Ship exists
+    bool shot;  //Ship has been shot
+    bool hit;   //Ship has been hit
 public:
     Cell();
-    Cell(const Cell& orig);
-    virtual ~Cell();
-    
-void SetCell(bool hasShip);
-void SetCell(bool hasShip,bool beenShot,bool hasHit);
-
-bool HasShip();
-bool HasBeenShot();
-bool HasHit();
-
-bool Shoot();
-
-private:
-    bool ship;
-    bool shot;
-    bool hit;
+    void SetCell(bool hasShip);
+    void SetCell(bool hasShip,bool beenShot,bool hasHit);
+    bool HasShip();
+    bool HasBeenShot();
+    bool HasHit();
+    bool Shoot();
 };
 
 #endif /* CELL_H */
