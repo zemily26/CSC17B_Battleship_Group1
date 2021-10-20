@@ -1,39 +1,92 @@
+#include <iomanip>
+using namespace std;
 
 #include "Input.h"
-#include "Constants.h"
+//Add this file later from git hub
+//#include "Constants.h"
 
+//Constructor
 Input::Input() {
     state = Waiting;
     buffer = new char[bufferSize];
     bufferLength = 0;
 }
 
+//Overloaded constructor
 Input::Input(const Input& orig) {
+  //ask andrew what he wanted to do with this overloaded constructor
 }
 
+//Destructor
 Input::~Input() {
+  //delete any dynamic stuff
+  delete [] buffer;
+}
+
+//Input Coordinates to shoot in
+      // Format - letter=y, number=x
+void Input::inputCoordinates() {
+  cout << "Format is \"A1\" or \"A,10\" or \"A 10\"\n" << endl
+       << "Assume \"A\" is on the Y Axis. \"1\" is on the X Axis.\n" << endl
+       << "Input the coordinates of your choice..." << endl
+       << "Enter Input: ";
+  //Cin coordinates
+  cin.clear();
+  cin.getline(buffer, bufferSize);
+}
+
+//Input User Set Up
+bool Input::inputUserSetUp() {
+  //Initialize stuff
+  char sideways;
+  //Ask for the direction of the rotation
+  cout << "Would you like your ship to be horizontal or not? (Y) (N): ";
+  cin>>sideways;
+  //Return sideways as true if Yes, and false if No for ship orientation
+  if(toupper(sideways)=='Y') {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+//Input Player Data
+void Input::inputPlayerData() {
+  //Input the name of players
+  //Need to check whether string will work when put into a binary file
+  //Might have to chnage string to dynamic char array
+  //First player
+  cout << "Input player name : ";
+  //getline with playerName var from playerdata.h
 }
 
 //Returns True if able to grab line from Input.
 //Should Lock Process Otherwise.
-
 bool Input::ListenInput(char *buffer) {
-    std::cin.getline(buffer, bufferSize);
+    cin.getline(buffer, bufferSize);
     bufferLength = strlen(buffer);
     return (bufferLength > 0);
 }
 
 //Gets And Validates Input Based off Input State.
-
+//input depending on state.
 bool Input::GetUserInput() {
     bool valid = false;
     switch (state) {
-        case Command://Command Input, Single Char
+        case Command:
+            //Command Input, Single Char
+            
+
+
             valid = ListenInput(buffer);
             if (!valid)
                 ThrowWarning();
             break;
-        case Position://Position Input, "A 10" "A,10" "A 10"
+        case Position:
+            //Position Input, "A 10" "A,10" "A 10"
+            //inputCoordinates();
+
+
             valid = ListenInput(buffer);
             if (valid) //"A10" "A,10" "A 10"
                 if (bufferLength < 2 && bufferLength > 4)
@@ -46,7 +99,8 @@ bool Input::GetUserInput() {
             if (!valid)
                 ThrowWarning();
             break;
-        default: // Input Waiting, Not Accepting Input.
+        default: 
+            // Input Waiting, Not Accepting Input.
             ThrowWarning();
             break;
     }
@@ -54,40 +108,41 @@ bool Input::GetUserInput() {
 }
 
 //Used for Debugging if Input is Not Valid.
-
+//Don't forget to include constant file for the results
 void Input::ThrowWarning() {
     switch (state) {
-        case Command://Command Input, Single Char
-            std::cout << invalidWarning_Command << std::endl;
+        case Command:
+            //Command Input, Single Char
+            //cout << invalidWarning_Command << endl;
             break;
-        case Position://Position Input, "A 10" "A,10" "A 10"
-            std::cout << invalidWarning_Position << std::endl;
+        case Position:
+            //Position Input, "A 10" "A,10" "A 10"
+            //cout << invalidWarning_Position << endl;
             break;
         case Phrase:
-            std::cout << invalidWarning_Phrase << std::endl;
+            //cout << invalidWarning_Phrase << endl;
             break;
         default: // Input Waiting, Not Accepting Input.
-            std::cout << invalidWarning_Waiting << std::endl;
+            //cout << invalidWarning_Waiting << endl;
             break;
     }
-    std::cout << " Your Input :\"" << buffer << "\" length:" << bufferLength << std::endl;
+    cout << " Your Input :\"" << buffer << "\" length:" << bufferLength << endl;
 }
 
 //Returns Single Char from Input.
 //Returns UpperCase when Possible.
 //Char 'A'
-
 char Input::GetCommand() {
     state = Command;
     //Input Loop, Probably should remove this, it will always be true.
     while (!GetUserInput()) {
+
     }
     return toupper(buffer[0]);
 }
 
 //Returns Position from Input.
 //A Dynamic int Array [X,Y]
-
 int *Input::GetPosition() {
     //Sets state to 'Position'
     state = Position;
@@ -95,6 +150,7 @@ int *Input::GetPosition() {
     int *input = new int[2];
     //Input Loop
     while (!GetUserInput()) {
+      
     }
     //ASCII '0' comes directly before ASCII '1'
     //We can get the direct numeric value,
@@ -129,40 +185,42 @@ int *Input::GetPosition() {
 }
 
 //Returns Dynamic Char Array from Input.
-
 char *Input::GetPhrase() {
     state = Phrase;
     char *input = new char[bufferLength];
     //Input Loop, Probably should remove this, it will always be true.
     while (!GetUserInput()) {
+
+
     }
     for (int i = 0; i < bufferLength; i++)
         input[i] = buffer[i];
     return input;
 }
 
+
+
+
+
+
 //INPUT TEST//
 void Input::RunTest()
 {
   int *posTest;
   char charTest, *phraseTest;
-  std::cout << "Format is \"A1\" or \"A,10\" or \"A 10\"\n";
-  std::cout << "Assume \"A\" is on the Y Axis. \"1\" is on the X Axis.\n";
-  std::cout << "Input a position :";
+  cout << "Format is \"A1\" or \"A,10\" or \"A 10\"\n";
+  cout << "Assume \"A\" is on the Y Axis. \"1\" is on the X Axis.\n";
+  cout << "Input a position :";
   posTest = GetPosition();
-  std::cout << "A Command is a Menu Option, a Single char for example (Y) (N) \n";
-  std::cout << "Input a Command :";
+  cout << "A Command is a Menu Option, a Single char for example (Y) (N) \n";
+  cout << "Input a Command :";
   charTest = GetCommand();
-  std::cout << "A Phrase is a string, for example \"Your Name\"\n";
-  std::cout << "Input a Phrase :";
+  cout << "A Phrase is a string, for example \"Your Name\"\n";
+  cout << "Input a Phrase :";
   phraseTest = GetPhrase();
-  std::cout << "The Position you Input was X:" << posTest[0] << " ,Y:" << posTest[1] << std::endl;
-  std::cout << "The Char you Input was \'"<< charTest << "\'" << std::endl;
-  std::cout << "The Phrase you Input was \"" << phraseTest << "\"\n";
+  cout << "The Position you Input was X:" << posTest[0] << " ,Y:" << posTest[1] << endl;
+  cout << "The Char you Input was \'"<< charTest << "\'" << endl;
+  cout << "The Phrase you Input was \"" << phraseTest << "\"\n";
   delete []posTest;
   delete []phraseTest;
-}
-
-void Input::Destroy() {
-    delete []buffer;
 }
