@@ -7,12 +7,6 @@ Cell::Cell() {
     hit = false;
 }
 
-Cell::Cell(const Cell& orig) {
-}
-
-Cell::~Cell() {
-}
-
 void Cell::SetCell(bool hasShip)
 {
     ship = hasShip;
