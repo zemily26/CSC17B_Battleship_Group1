@@ -17,7 +17,9 @@ const std::string SHIP_NAMES[] = {"Carrier", "Battleship", "Cruiser", "Submarine
 const int SHIP_SIZE[] = {5, 4, 3, 3, 2};
 
 //>>Input.h View.h
-
+enum CellChars{
+    Empty= '-', Ship='S', Hit='!', Miss='0'
+};
 const std::string invalidWarning_Waiting = "Currently Not Accepting Inputs.";
 const std::string invalidWarning_Command = "Input Is Invalid. Exceeds 256 Length.";
 const std::string invalidWarning_Position = "Input Is Invalid,\nFormat Must be \"A1\" or \"A,1\"";
