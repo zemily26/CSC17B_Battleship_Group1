@@ -10,10 +10,8 @@ Grid::Grid() {
     CreateBoard();
 }
 
-Grid::Grid(const Grid& orig) {
-}
-
-Grid::~Grid() {
+Grid::~Grid(){
+    Destroy();
 }
 
 // X Y FORMAT 
@@ -31,6 +29,7 @@ void Grid::Destroy() {
 //Private::
 
 void Grid::CreateBoard() {
+    board=new Cell*[BOARD_WIDTH];
     for (int i = 0; i < BOARD_WIDTH; i++) {
         board[i] = new Cell[BOARD_HEIGHT];
     }
