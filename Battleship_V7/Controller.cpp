@@ -56,7 +56,7 @@ void Controller::setUp(){
             display.shipPosCheckMessage();
             char again; //Hold choice to re-start ship placement
             again=in.inputLikePlacement();
-            if(again=='y') {
+            if(again=='y' || again=='Y') {  //player can enter either "y" or "Y"
                 like=true;
             }
             else{
