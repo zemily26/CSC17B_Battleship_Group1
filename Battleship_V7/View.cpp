@@ -97,9 +97,9 @@ void View::playerNamePrompt(int playerNum){
 //Output ship fit message
 void View::shipFitMessage(bool fits){
     if(fits)
-        cout << "The Ship Fits, choose another coordinate..." << endl;
+        cout << endl << "The Ship Fits, choose another coordinate..." << endl;
     else
-        cout << "The Ship does NOT Fit, choose another coordinate..." << endl;
+        cout << endl << "The Ship does NOT Fit, choose another coordinate..." << endl;
 }
 
 //Prompt for Ship Position Check 
