@@ -68,7 +68,7 @@ void View::menu() {
   
 //Output input error message
 void View::userInputError(){
-  cout << "User input is invalid! Try Again: " << endl;
+  cout << "User input is invalid! Try Again: "/* << endl*/; //don't skip a line at the end
 }
 
 //Prompt for coordinates
