@@ -43,7 +43,8 @@ int *Input::inputCoordinates() {
   //Validating input if it is in range
   while(((input[0] < 'A' || input[0] > 'H') && (input[0] < 'a' || input[0] > 'h')) || (input[1] < '1' || input[1] > '8')) {
       inputDisplay.userInputError();
-      cin.getline(input, size-1);
+      //cin.getline(input, size-1); replace this line with the next line
+      cin >> input[0] >> input[1]; //doesn't repeat userInputError()
   }
   //Allocate Dynamic array for [X,Y] Coordinates
   int *intCoordinates = new int[size - 2];
